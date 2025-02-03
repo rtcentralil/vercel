@@ -1,8 +1,49 @@
+/* styles/globals.css */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Global custom styles */
+:root {
+  --primary-color: #1E90FF; /* Dodger Blue */
+  --secondary-color: #FFFFFF; /* White */
+  --accent-color: #F0F0F0; /* Light Gray */
+  --text-color: #333333; /* Dark Gray */
+}
+
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header, footer {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-color);
+}
+
+p {
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
 }
