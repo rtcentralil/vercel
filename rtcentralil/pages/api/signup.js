@@ -1,3 +1,4 @@
+/* signup.js - Improved backend handling */
 export default function handler(req, res) {
   if (req.method === 'POST') {
     const { email } = req.body;
@@ -5,7 +6,6 @@ export default function handler(req, res) {
       res.status(400).json({ error: "A valid email is required." });
       return;
     }
-
     console.log("New signup:", email);
     res.status(200).json({ message: "Thank you for signing up!" });
   } else {
