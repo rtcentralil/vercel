@@ -1,40 +1,58 @@
-/* globals.css - Updated with animations and refinements */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --primary-color: #003366;
-  --secondary-color: #FF9900;
-  --text-color: #333333;
+/* 🌟 General Styles */
+html {
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+  font-family: 'Poppins', sans-serif; /* Ensures the default font */
+  background-color: #f9fafb; /* Light neutral background */
+  color: #333; /* Sets a dark-gray text color */
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #ffffff;
-  color: var(--text-color);
+  @apply antialiased;
 }
 
-a {
-  color: var(--primary-color);
-  transition: color 0.3s ease-in-out;
+/* 🌟 Section Styling - Different Colors for Each Section */
+.hero-section {
+  @apply bg-blue-900 text-white;
 }
 
-a:hover {
-  color: var(--secondary-color);
+.programs-section {
+  @apply bg-blue-100 text-gray-900;
 }
 
-/* Smooth Scroll */
-html {
-  scroll-behavior: smooth;
+.about-section {
+  @apply bg-yellow-50 text-gray-800;
 }
 
-/* Header Effects */
-#navbar {
-  transition: background 0.3s ease-in-out;
+.testimonials-section {
+  @apply bg-purple-50 text-gray-900;
 }
 
-/* Fade-in Animation */
+.signup-section {
+  @apply bg-pink-50 text-gray-900;
+}
+
+.instagram-section {
+  @apply bg-gray-100 text-gray-900;
+}
+
+/* 🌟 Buttons */
+.btn {
+  @apply px-6 py-3 rounded-lg font-medium transition-all;
+}
+
+.btn-primary {
+  @apply bg-blue-600 text-white hover:bg-blue-700;
+}
+
+.btn-secondary {
+  @apply bg-gray-300 text-gray-800 hover:bg-gray-400;
+}
+
+/* 🌟 Animations & Transitions */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -45,12 +63,41 @@ html {
     transform: translateY(0);
   }
 }
-.hero-content {
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
   animation: fadeIn 1s ease-in-out;
 }
 
-/* Lift effect for hover */
-.program-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+.animate-slide-up {
+  animation: slideUp 0.8s ease-out;
+}
+
+/* 🌟 Navbar */
+.navbar {
+  @apply fixed top-0 left-0 w-full z-50 transition-all;
+}
+
+.navbar.scrolled {
+  @apply bg-blue-900 shadow-lg;
+}
+
+/* 🌟 Card Styling */
+.card {
+  @apply p-6 bg-white rounded-xl shadow-md transition-all hover:shadow-lg hover:scale-105;
+}
+
+/* 🌟 Footer */
+.footer {
+  @apply bg-[#003366] text-white py-6 text-center text-lg font-semibold;
 }
