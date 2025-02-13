@@ -8,6 +8,7 @@ import About from "../components/sections/About";
 import Testimonials from "../components/sections/Testimonials";
 import Signup from "../components/sections/Signup";
 import Instagram from "../components/sections/Instagram";
+import AnimatedCounter from "../components/sections/AnimatedCounter";
 import Footer from "../components/Footer";
 import { getPartnerLogos } from "../lib/fetchLogos";
 
@@ -29,6 +30,7 @@ export default function Home({ logos }) {
       <About />
       <Programs />
       <Testimonials />
+      <AnimatedCounter />
       <PartnerCarousel logos={logos} />
       <Signup />
       <Instagram />

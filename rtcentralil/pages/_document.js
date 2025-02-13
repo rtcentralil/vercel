@@ -5,6 +5,8 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        {/* Add viewport meta tag for mobile devices */}
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* Preload Google Fonts for better performance */}
         <link
           rel="preload"
@@ -15,11 +17,10 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
           rel="stylesheet"
         />
-
         {/* Preconnect to Google for faster font loading */}
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
-        {/* Google Analytics (using Next.js <Script> for better handling) */}
+        {/* Google Analytics */}
         <Script
           strategy="afterInteractive"
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`}

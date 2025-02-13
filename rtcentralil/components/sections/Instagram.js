@@ -12,10 +12,10 @@ export default function Instagram() {
   }, []);
 
   return (
-    <section id="instagram" className="py-16 bg-gray-100">
+    <section id="instagram" className="py-16 bg-turquoiseBlue">
       <div className="container mx-auto px-6 text-center">
-        <h2 className="text-4xl font-bold text-[#003366]">Instagram Feed</h2>
-        <p className="mt-4 text-lg text-gray-700">Latest updates from our community</p>
+        <h2 className="text-3xl sm:text-4xl font-bold text-outerSpace">Instagram Feed</h2>
+        <p className="mt-4 text-base sm:text-lg text-outerSpace">Latest updates from our community</p>
         <div className="mt-6">
           <div className="elfsight-app-46e58cf7-3235-4178-b65d-957f8d9a9d19" data-elfsight-app-lazy></div>
         </div>
