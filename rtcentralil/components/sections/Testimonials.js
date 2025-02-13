@@ -26,7 +26,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="py-16 bg-fireBush text-black">
+    <section className="testimonials-section py-16">
       <div className="container mx-auto px-6">
         <div className="bg-white p-8 rounded-lg shadow-lg text-center max-w-3xl mx-auto">
           <p className="text-xl sm:text-2xl italic text-gray-700">

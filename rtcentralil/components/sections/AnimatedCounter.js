@@ -23,7 +23,7 @@ export default function AnimatedCounter({ targetNumber }) {
   }, [count, targetNumber]);
 
   return (
-    <section className="py-16 bg-jellyBean text-white text-center">
+    <section className="counter-section py-16">
       {/* 
         Replace `bg-jellyBean` with any of your brand colors 
         (e.g., bg-persianRed, bg-fireBush, etc.) 

@@ -7,18 +7,23 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        jellyBean: "#2786a7",
-        persianRed: "#cc3037",
-        greenWhite: "#eaeee1",
-        fireBush: "#e8a425",
-        oliveGreen: "#adb35e",
-        regentGray: "#8999a3",
-        cabbagePont: "#454e41",
-        outerSpace: "#293130",
-        canCan: "#d69398",
-        turquoiseBlue: "#5cccec",
+        // Darkened for improved contrast with white text
+        jellyBean: "#196d85",      
+        persianRed: "#cc3037",      // stays the same
+        greenWhite: "#eaeee1",      // stays the same
+        // Adjusted fireBush to be slightly darker
+        fireBush: "#d89d1f",        
+        // Darkened oliveGreen for better text contrast
+        oliveGreen: "#8b9d4a",      
+        // Darkened regentGray so white text on buttons is more legible
+        regentGray: "#707d8a",      
+        cabbagePont: "#454e41",     // stays the same
+        outerSpace: "#293130",      // stays the same
+        canCan: "#d69398",          // stays the same
+        // Darkened turquoiseBlue for improved readability when used with outerSpace
+        turquoiseBlue: "#3bb7d3",   
       },
     },
   },
   plugins: [],
-};
+}

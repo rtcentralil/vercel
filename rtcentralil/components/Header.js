@@ -26,10 +26,15 @@ export default function Header() {
         <h1 className={`text-3xl font-bold tracking-wide ${textColor}`}>
           RoboThink Central Illinois
         </h1>
-        <nav>
+        <nav aria-label="Main navigation">
           {/* Mobile Hamburger */}
           <div className="md:hidden">
-            <button onClick={() => setMenuOpen(!menuOpen)} className="focus:outline-none">
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              className="focus:outline-none"
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={menuOpen}
+            >
               <svg
                 className={`w-6 h-6 ${textColor}`}
                 fill="none"

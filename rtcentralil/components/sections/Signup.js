@@ -22,7 +22,7 @@ export default function Signup() {
   };
 
   return (
-    <section className="py-16 bg-greenWhite">
+    <section className="signup-section py-16">
       <div className="container mx-auto px-6 text-center">
         <div className="max-w-md mx-auto bg-white p-6 rounded-lg shadow-lg">
           <form onSubmit={handleSubmit} className="flex flex-col space-y-4">

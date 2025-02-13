@@ -4,7 +4,7 @@ const programs = ["robotics", "coding", "engineering"];
 
 export default function Programs() {
   return (
-    <section id="programs" className="py-16 bg-greenWhite text-outerSpace">
+    <section id="programs" className="programs-section py-16">
       <div className="container mx-auto px-6">
         <h2 className="text-3xl sm:text-4xl font-bold text-center mb-10">Our Programs</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">

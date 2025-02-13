@@ -28,7 +28,7 @@ export default function PartnerCarousel() {
   };
 
   return (
-    <section className="py-16 bg-outerSpace">
+    <section className="partner-carousel-section py-16">
       <div className="container mx-auto px-6">
         <Slider {...settings} aria-label="Partner logos carousel">
           {logos.map((logo, index) => (

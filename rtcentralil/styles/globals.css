@@ -4,39 +4,62 @@
 
 /* 🌟 General Styles */
 html {
-  scroll-behavior: smooth; /* Enables smooth scrolling */
-  font-family: 'Poppins', sans-serif; /* Ensures the default font */
+  scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
   background-color: #f9fafb; /* Light neutral background */
-  color: #333; /* Sets a dark-gray text color */
+  color: #333;
 }
 
 body {
   @apply antialiased;
 }
 
-/* 🌟 Section Styling - Different Colors for Each Section */
+/* 🌟 Section Styling - Using Brand Colors for a Consistent Look */
 .hero-section {
-  @apply bg-blue-900 text-white;
-}
-
-.programs-section {
-  @apply bg-blue-100 text-gray-900;
+  @apply bg-jellyBean text-white;
 }
 
 .about-section {
-  @apply bg-yellow-50 text-gray-800;
+  @apply bg-canCan text-outerSpace;
+}
+
+.programs-section {
+  @apply bg-greenWhite text-outerSpace;
 }
 
 .testimonials-section {
-  @apply bg-purple-50 text-gray-900;
+  /* Changed text color to white for better contrast with persianRed */
+  @apply bg-persianRed text-white;
+}
+
+.counter-section {
+  @apply bg-outerSpace text-greenWhite text-center;
+}
+
+.partner-carousel-section {
+  @apply bg-oliveGreen text-outerSpace;
 }
 
 .signup-section {
-  @apply bg-pink-50 text-gray-900;
+  @apply bg-fireBush text-outerSpace;
 }
 
 .instagram-section {
-  @apply bg-gray-100 text-gray-900;
+  @apply bg-turquoiseBlue text-outerSpace;
+}
+
+/* 🌟 Footer Styling */
+.footer {
+  @apply bg-outerSpace text-white py-6 text-center text-lg font-semibold;
+}
+
+/* 🌟 Navbar */
+.navbar {
+  @apply fixed top-0 left-0 w-full z-50 transition-all;
+}
+
+.navbar.scrolled {
+  @apply bg-outerSpace shadow-lg;
 }
 
 /* 🌟 Buttons */
@@ -45,11 +68,11 @@ body {
 }
 
 .btn-primary {
-  @apply bg-blue-600 text-white hover:bg-blue-700;
+  @apply bg-persianRed text-white hover:bg-fireBush;
 }
 
 .btn-secondary {
-  @apply bg-gray-300 text-gray-800 hover:bg-gray-400;
+  @apply bg-regentGray text-white hover:bg-cabbagePont;
 }
 
 /* 🌟 Animations & Transitions */
@@ -81,23 +104,4 @@ body {
 
 .animate-slide-up {
   animation: slideUp 0.8s ease-out;
-}
-
-/* 🌟 Navbar */
-.navbar {
-  @apply fixed top-0 left-0 w-full z-50 transition-all;
-}
-
-.navbar.scrolled {
-  @apply bg-blue-900 shadow-lg;
-}
-
-/* 🌟 Card Styling */
-.card {
-  @apply p-6 bg-white rounded-xl shadow-md transition-all hover:shadow-lg hover:scale-105;
-}
-
-/* 🌟 Footer */
-.footer {
-  @apply bg-[#003366] text-white py-6 text-center text-lg font-semibold;
 }
