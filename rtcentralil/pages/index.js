@@ -26,14 +26,13 @@ export default function Home({ logos }) {
 
       <Header />
       <Hero />
-      <Programs />
-      <PartnerCarousel logos={logos} />
       <About />
+      <Programs />
       <Testimonials />
+      <PartnerCarousel logos={logos} />
       <Signup />
       <Instagram />
       <Footer />
-
       <Analytics />
     </>
   );
