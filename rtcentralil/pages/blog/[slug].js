@@ -6,16 +6,40 @@ import remarkGfm from 'remark-gfm'; // Enables better markdown formatting
 import html from 'remark-html';
 import SEO from '../../components/SEO';
 
-export default function BlogPost({ frontmatter, content }) {
+export default function BlogPost({ frontmatter, content, slug }) {
+  // Create a canonical URL for this blog post
+  const canonical = `https://www.robothinkcil.com/blog/${slug}`;
+
+  // Build a JSON-LD schema for the article
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": frontmatter.title,
+    "description": frontmatter.excerpt,
+    "datePublished": frontmatter.date,
+    "author": {
+      "@type": "Organization",
+      "name": "RoboThink Central Illinois"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": canonical
+    }
+  };
+
   return (
     <>
-      <SEO title={frontmatter.title} description={frontmatter.excerpt} />
+      <SEO
+        title={frontmatter.title}
+        description={frontmatter.excerpt}
+        canonical={canonical}
+        jsonLd={articleSchema}
+      />
       <article className="blog-post-section py-16">
         <div className="container mx-auto px-6 max-w-3xl">
-          {/* Only show the date, since the H1 title is already in the Markdown file */}
+          {/* Display the post date */}
           <p className="text-gray-500 italic text-lg mb-8">{frontmatter.date}</p>
-
-          {/* Markdown content renders the H1 properly */}
+          {/* Render the processed Markdown content */}
           <div className="prose prose-lg prose-headings:text-gray-900 prose-headings:font-extrabold prose-p:leading-8 prose-ul:ml-5 prose-ul:list-disc prose-strong:text-gray-800">
             <div dangerouslySetInnerHTML={{ __html: content }} />
           </div>
@@ -29,8 +53,8 @@ export async function getStaticPaths() {
   const postsDirectory = path.join(process.cwd(), 'posts');
   const filenames = fs.readdirSync(postsDirectory);
 
-  const paths = filenames.map(filename => ({
-    params: { slug: filename.replace(/\.md$/, '') }
+  const paths = filenames.map((filename) => ({
+    params: { slug: filename.replace(/\.md$/, '') },
   }));
 
   return {
@@ -46,9 +70,9 @@ export async function getStaticProps({ params }) {
   const fileContents = fs.readFileSync(filePath, 'utf8');
   const { data, content } = matter(fileContents);
 
-  // Ensure Markdown is processed properly
+  // Process Markdown to HTML with remark
   const processedContent = await remark()
-    .use(remarkGfm) // Enables proper Markdown formatting (bold, lists, headings)
+    .use(remarkGfm)
     .use(html)
     .process(content);
 
@@ -56,6 +80,7 @@ export async function getStaticProps({ params }) {
     props: {
       frontmatter: data,
       content: processedContent.toString(),
+      slug: params.slug, // Pass the slug for generating the canonical URL
     },
   };
 }
