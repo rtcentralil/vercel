@@ -1,6 +1,6 @@
 ---
 title: "3 Reasons Why STEM Curriculum Is Key To Machine Learning & Problem-solving"
-date: "2023-10-01"
+date: "2024-05-10"
 slug: "stem-curriculum-key-to-machine-learning"
 excerpt: "Discover 3 key reasons why teaching STEM, science, tech, engineering, & maths is essential for empowering the future generation in machine learning and problem-solving."
 ---
