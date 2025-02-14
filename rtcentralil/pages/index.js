@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { Analytics } from "@vercel/analytics/next";
+import SEO from "../components/SEO";
 import Header from "../components/Header";
 import Hero from "../components/sections/Hero";
 import Programs from "../components/sections/Programs";
@@ -24,7 +25,12 @@ export default function Home({ logos }) {
         <title>RoboThink Central Illinois</title>
         <meta name="description" content="Join our STEM-based Robotics & Coding programs for kids!" />
       </Head>
-
+      <SEO 
+        title="RoboThink Central Illinois | Home" 
+        description="Join our STEM-based Robotics & Coding programs for kids!"
+        canonical="https://www.robothinkcil.com/"
+        keywords="STEM, Robotics, Coding, Workshops"
+      />
       <Header />
       <Hero />
       <About />

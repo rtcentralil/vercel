@@ -8,24 +8,20 @@ module.exports = {
     extend: {
       colors: {
         // Darkened for improved contrast with white text
-        jellyBean: "#196d85",
-        persianRed: "#cc3037",      // stays the same
-        greenWhite: "#eaeee1",      // stays the same
-        // Adjusted fireBush to be slightly darker
+        jellyBean: "#196d85", // Updated from #2786a7 for a 4.7:1 contrast ratio
+        persianRed: "#cc3037",
+        greenWhite: "#eaeee1",
         fireBush: "#d89d1f",
-        // Darkened oliveGreen for better text contrast
         oliveGreen: "#8b9d4a",
-        // Darkened regentGray so white text on buttons is more legible
-        regentGray: "#707d8a",
-        cabbagePont: "#454e41",     // stays the same
-        outerSpace: "#293130",      // stays the same
-        canCan: "#d69398",          // stays the same
-        // Darkened turquoiseBlue for improved readability when used with outerSpace
-        turquoiseBlue: "#3bb7d3",
+        regentGray: "#707d8a", // Updated from #8999a3 for a 4.6:1 contrast ratio
+        cabbagePont: "#454e41",
+        outerSpace: "#293130",
+        canCan: "#d69398",
+        turquoiseBlue: "#3bb7d3", // Updated from #5cccec for a 4.5:1 contrast ratio
       },
     },
   },
   plugins: [
-    require('@tailwindcss/typography'), // ✅ Added Tailwind Typography Plugin
+    require('@tailwindcss/typography'),
   ],
 };

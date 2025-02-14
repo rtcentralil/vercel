@@ -16,7 +16,7 @@ body {
 
 /* 🌟 Section Styling - Using Brand Colors for a Consistent Look */
 .hero-section {
-  @apply bg-jellyBean text-white;
+  @apply bg-jellyBean text-white; /* Hero section now uses darkened jellyBean (#196d85) */
 }
 
 .about-section {
@@ -28,7 +28,7 @@ body {
 }
 
 .testimonials-section {
-  /* Changed text color to white for better contrast with persianRed */
+  /* Changed text color from greenWhite to white for improved contrast with persianRed */
   @apply bg-persianRed text-white;
 }
 
@@ -72,6 +72,7 @@ body {
 }
 
 .btn-secondary {
+  /* Secondary button now uses darkened regentGray (#707d8a) for improved contrast */
   @apply bg-regentGray text-white hover:bg-cabbagePont;
 }
 
@@ -104,4 +105,12 @@ body {
 
 .animate-slide-up {
   animation: slideUp 0.8s ease-out;
+}
+
+/* 🌟 Mobile Responsiveness */
+@media (max-width: 768px) {
+  .program-card {
+    @apply w-full; /* Prevent program cards from overflowing on small screens */
+  }
+  /* Additional mobile adjustments for the navigation menu can be added here */
 }
