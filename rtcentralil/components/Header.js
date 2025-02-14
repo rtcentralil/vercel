@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Header() {
   const headerRef = useRef(null);
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const router = useRouter(); // Detects current route
 
   // Use outerSpace when not scrolled, greenWhite when scrolled
   const textColor = scrolled ? "text-greenWhite" : "text-outerSpace";
@@ -14,6 +16,20 @@ export default function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // ✅ Function to handle smooth scrolling for section links
+  const handleScrollToSection = (e, section) => {
+    e.preventDefault();
+    setMenuOpen(false);
+
+    if (router.pathname !== "/") {
+      // Redirect to home page and scroll after navigation
+      router.push(`/#${section}`);
+    } else {
+      // Scroll to section smoothly
+      document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <header
@@ -62,13 +78,23 @@ export default function Header() {
           <ul className={`md:flex space-x-6 text-lg font-medium ${menuOpen ? "block" : "hidden"} md:block`}>
             {["about", "programs", "testimonials", "blog", "contact"].map((section) => (
               <li key={section}>
-                <Link
-                  href={section === "blog" ? "/blog" : `#${section}`}
-                  onClick={() => setMenuOpen(false)}
-                  className={`${textColor} hover:text-yellow-400 transition`}
-                >
-                  {section.charAt(0).toUpperCase() + section.slice(1)}
-                </Link>
+                {section === "blog" ? (
+                  <Link
+                    href="/blog"
+                    onClick={() => setMenuOpen(false)}
+                    className={`${textColor} hover:text-yellow-400 transition`}
+                  >
+                    {section.charAt(0).toUpperCase() + section.slice(1)}
+                  </Link>
+                ) : (
+                  <a
+                    href={`#${section}`}
+                    onClick={(e) => handleScrollToSection(e, section)}
+                    className={`${textColor} hover:text-yellow-400 transition cursor-pointer`}
+                  >
+                    {section.charAt(0).toUpperCase() + section.slice(1)}
+                  </a>
+                )}
               </li>
             ))}
           </ul>

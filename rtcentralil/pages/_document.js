@@ -5,8 +5,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        {/* Add viewport meta tag for mobile devices */}
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* Preload Google Fonts for better performance */}
         <link
           rel="preload"
