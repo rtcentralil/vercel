@@ -60,10 +60,10 @@ export default function Header() {
             </button>
           </div>
           <ul className={`md:flex space-x-6 text-lg font-medium ${menuOpen ? "block" : "hidden"} md:block`}>
-            {["about", "programs", "testimonials", "contact"].map((section) => (
+            {["about", "programs", "testimonials", "blog", "contact"].map((section) => (
               <li key={section}>
                 <Link
-                  href={`#${section}`}
+                  href={section === "blog" ? "/blog" : `#${section}`}
                   onClick={() => setMenuOpen(false)}
                   className={`${textColor} hover:text-yellow-400 transition`}
                 >
