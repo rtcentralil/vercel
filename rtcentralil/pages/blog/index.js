@@ -4,10 +4,13 @@ import path from 'path';
 import matter from 'gray-matter';
 import Link from 'next/link';
 import SEO from '../../components/SEO';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 
 export default function Blog({ posts }) {
   return (
     <>
+      <Header />
       <SEO 
         title="Blog | RoboThink" 
         description="Read our latest blog posts on STEM education, robotics classes, coding lessons, and more."
@@ -32,6 +35,7 @@ export default function Blog({ posts }) {
           </div>
         </div>
       </section>
+      <Footer />
     </>
   );
 }
@@ -39,17 +43,19 @@ export default function Blog({ posts }) {
 export async function getStaticProps() {
   const postsDirectory = path.join(process.cwd(), 'posts');
   const filenames = fs.readdirSync(postsDirectory);
-  const posts = filenames.map(filename => {
-    const filePath = path.join(postsDirectory, filename);
-    const fileContents = fs.readFileSync(filePath, 'utf8');
-    const { data, content } = matter(fileContents);
-    return {
-      slug: filename.replace(/\.md$/, ''),
-      title: data.title,
-      excerpt: data.excerpt || content.substring(0, 150) + '...',
-      date: data.date,
-    };
-  }).sort((a, b) => new Date(b.date) - new Date(a.date));
+  const posts = filenames
+    .map(filename => {
+      const filePath = path.join(postsDirectory, filename);
+      const fileContents = fs.readFileSync(filePath, 'utf8');
+      const { data, content } = matter(fileContents);
+      return {
+        slug: filename.replace(/\.md$/, ''),
+        title: data.title,
+        excerpt: data.excerpt || content.substring(0, 150) + '...',
+        date: data.date,
+      };
+    })
+    .sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return {
     props: { posts }

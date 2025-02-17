@@ -13,8 +13,6 @@ module.exports = {
         },
       ],
       // If you have additional custom sitemaps, list them here.
-      additionalSitemaps: [
-        'https://www.robothinkcil.com/sitemap.xml'
-      ],
+      additionalSitemaps: [],
     },
   };
