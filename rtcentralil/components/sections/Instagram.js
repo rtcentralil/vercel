@@ -12,7 +12,7 @@ export default function Instagram() {
   }, []);
 
   return (
-    <section id="instagram" className="instagram-section py-16">
+    <section id="instagram" className="instagram-section py-16 section-transition">
       <div className="container mx-auto px-6 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold text-outerSpace">Instagram Feed</h2>
         <p className="mt-4 text-base sm:text-lg text-outerSpace">Latest updates from our community</p>

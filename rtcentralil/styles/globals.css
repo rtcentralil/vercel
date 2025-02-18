@@ -20,7 +20,7 @@ body {
 }
 
 .about-section {
-  @apply bg-canCan text-outerSpace;
+  @apply bg-oliveGreen text-outerSpace;
 }
 
 .programs-section {
@@ -37,7 +37,7 @@ body {
 }
 
 .partner-carousel-section {
-  @apply bg-oliveGreen text-outerSpace;
+  @apply bg-canCan text-outerSpace;
 }
 
 .signup-section {
@@ -105,6 +105,17 @@ body {
 
 .animate-slide-up {
   animation: slideUp 0.8s ease-out;
+}
+
+.section-transition {
+  transition: all 0.3s ease-out;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* 🌟 Mobile Responsiveness */

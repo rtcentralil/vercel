@@ -26,7 +26,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="testimonials-section py-16">
+    <section id="testimonials" className="testimonials-section py-16 section-transition">
       <div className="container mx-auto px-6">
         <div className="bg-white p-8 rounded-lg shadow-lg text-center max-w-3xl mx-auto">
           <p className="text-xl sm:text-2xl italic text-gray-700">
